@@ -8,9 +8,54 @@
     <link rel="stylesheet" href="style.css">
   </head>
   <body>
-    <button id="btn">Dark Mode</button>
-    <h1>Quiz</h1>
-    <p>test</p>
+    <div class="modeBtn">
+    <button id="btn1">Dark Mode</button>
+  </div>
+    <div class="header">
+      <h1>Star Wars Quiz</h1>
+    </div>
+    <div class="body">
+      <form name="quiz" onsubmit="return onSubmit()">
+        <div class="question">
+          <h1>Anakin lost all four arms and legs when he was cut down by Obi-Wan</h1>
+          <input type="radio" name="q1" value="a"> True<br>
+          <input type="radio" name="q1" value="b"> False<br>
+        </div>
+        <div class="question">
+          <h1>Jango Fett's ship is called Slave 1</h1>
+          <input type="radio" name="q2" value="a"> True<br>
+          <input type="radio" name="q2" value="b"> False<br>
+        </div>
+        <div class="question">
+          <h1>Darth Vader famously said, "Luke, I am your father"</h1>
+          <input type="radio" name="q3" value="a"> True<br>
+          <input type="radio" name="q3" value="b"> False<br>
+        </div>
+        <div class="question">
+          <h1>What is Chewbacca's homeplanet?</h1>
+          <input type="radio" name="q4" value="a"> Kashyyyk<br>
+          <input type="radio" name="q4" value="b"> Kamino<br>
+          <input type="radio" name="q4" value="c"> Dagobah<br>
+        </div>
+        <div class="question">
+          <h1>Who killed Jango Fett?</h1>
+          <input type="radio" name="q5" value="a"> Luke Skywalker<br>
+          <input type="radio" name="q5" value="b"> Mace Windu<br>
+          <input type="radio" name="q5" value="c"> Han Solo<br>
+        </div>
+        <div class="question">
+          <h1>What order did Emperor Palpatine give to the clones to wipe out the jedi?</h1>
+          <input type="radio" name="q6" value="a"> Order 77<br>
+          <input type="radio" name="q6" value="b"> Order 46<br>
+          <input type="radio" name="q6" value="c"> Order 66<br>
+        </div>
+      </div>
+      <div class="subBtn">
+        <button class="btn2" type="submit">Get results!</button>
+      </div>
+      <div id="results">
+          <h2>You scored: Not yet attempted</h2>
+        </div> 
     <script src="main.js"></script>
   </body>
 </html>

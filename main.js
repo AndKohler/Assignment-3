@@ -1,4 +1,4 @@
-let btn = document.getElementById("btn");
+let btn = document.getElementById("btn1");
 btn.addEventListener("click", function () {
   if (btn.innerHTML === "Dark Mode") {
     btn.innerHTML = "Light Mode";
@@ -17,7 +17,7 @@ btn.addEventListener("click", () => {
 });
 
 let changeParaColor = () => {
-  let allPara = document.querySelectorAll("h1, p");
+  let allPara = document.querySelectorAll("h1, h2, p, .question");
 
   allPara.forEach((para) => {
     if (para.style.color !== "white") {
@@ -29,3 +29,29 @@ let changeParaColor = () => {
 };
 btn.addEventListener("click", changeParaColor);
 
+function onSubmit() {
+  let score = 0;
+  let numOfQuestions = 6;
+  let ansArr = ["b", "a", "b", "a", "b", "c"];
+
+  let q1 = document.forms["quiz"]["q1"].value;
+  let q2 = document.forms["quiz"]["q2"].value;
+  let q3 = document.forms["quiz"]["q3"].value;
+  let q4 = document.forms["quiz"]["q4"].value;
+  let q5 = document.forms["quiz"]["q5"].value;
+  let q6 = document.forms["quiz"]["q6"].value;
+
+  for (let i = 1; i <= numOfQuestions; i++) {
+    if (eval("q" + i) == "") {
+    }
+  }
+  for (let i = 1; i <= numOfQuestions; i++) {
+    if (eval("q" + i) == ansArr[i - 1]) {
+      score++;
+    }
+  }
+  let results = document.getElementById("results");
+  results.innerHTML =
+    "<h2>You Scored " + score + " points out of " + numOfQuestions + "</h2>";
+  return false;
+}

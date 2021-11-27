@@ -1,11 +1,40 @@
-button {
-    font-size: 1.2em;
-    float: right;
-    margin: 20px;
-}
-
-h1 {
-    font-size: 2.5em;
+.header {
     text-align: center;
-    margin: 30px 20px 20px 20px;
-}
+    font-size: 1.5em;
+  }
+  
+  .question {
+    border-style: solid;
+    border-radius: 10px;
+    margin: 10px 0px 10px 0px;
+    text-align: center;
+    font-family: cursive;
+  }
+  
+  .question > h1 {
+    font-size: 1.5em;
+  }
+  
+  .subBtn {
+    text-align: center;
+  }
+  
+  .btn2 {
+    height: 4em;
+    width: 10em;
+  }
+
+  .modeBtn {
+      text-align: right;
+  }
+
+  #btn1 {
+      height: 4em;
+      width: 10em;
+      border: 3px solid;
+  }
+  
+  h2 {
+      text-align: center;
+      font-size: 2em;
+  }
