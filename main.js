@@ -31,8 +31,8 @@ btn.addEventListener("click", changeParaColor);
 
 function onSubmit() {
   let score = 0;
-  let numOfQuestions = 6;
-  let ansArr = ["b", "a", "b", "a", "b", "c"];
+  let numOfQuestions = 7;
+  let ansArr = ["b", "a", "b", "a", "b", "c", "right"];
 
   let q1 = document.forms["quiz"]["q1"].value;
   let q2 = document.forms["quiz"]["q2"].value;
@@ -40,6 +40,7 @@ function onSubmit() {
   let q4 = document.forms["quiz"]["q4"].value;
   let q5 = document.forms["quiz"]["q5"].value;
   let q6 = document.forms["quiz"]["q6"].value;
+  let q7 = document.forms["quiz"]["q7"].value;
 
   for (let i = 1; i <= numOfQuestions; i++) {
     if (eval("q" + i) == "") {
@@ -48,6 +49,14 @@ function onSubmit() {
   for (let i = 1; i <= numOfQuestions; i++) {
     if (eval("q" + i) == ansArr[i - 1]) {
       score++;
+    }
+    if (score > 3) {
+      document.getElementById("results").style.color = "orange";
+    }
+    if (score === 7) {
+      document.getElementById("results").style.color = "green";
+    } else if (score < 3) {
+      document.getElementById("results").style.color = "red";
     }
   }
   let results = document.getElementById("results");
