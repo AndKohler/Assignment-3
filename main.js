@@ -32,7 +32,7 @@ btn.addEventListener("click", changeParaColor);
 function onSubmit() {
   let score = 0;
   let numOfQuestions = 7;
-  let ansArr = ["b", "a", "b", "a", "b", "c", "right"];
+  let ansArr = ["b", "a", "b", "a", "b", "c", "true"];
 
   let q1 = document.forms["quiz"]["q1"].value;
   let q2 = document.forms["quiz"]["q2"].value;
@@ -41,6 +41,21 @@ function onSubmit() {
   let q5 = document.forms["quiz"]["q5"].value;
   let q6 = document.forms["quiz"]["q6"].value;
   let q7 = document.forms["quiz"]["q7"].value;
+
+
+  // Efter jag valt dom 4 rätta alternativen i min checkbox så får jag fortfarande ett poäng om jag väljer fler.
+  // Jag kan välja alla svars alternativ och få rätt på frågan. Inte säker på hur jag ska lösa det.
+  let checkboxes = document.getElementsByName("q7");
+  let checkboxChecked = [];
+
+  for (let i = 0; i < checkboxes.length; i++) {
+    if (checkboxes[i].checked && checkboxes[i].value === "true") {
+      checkboxChecked.push(checkboxes[i]);
+    }
+  }
+  if (checkboxChecked.length === 4) {
+    score++;
+  }
 
   for (let i = 1; i <= numOfQuestions; i++) {
     if (eval("q" + i) == "") {
@@ -59,6 +74,7 @@ function onSubmit() {
       document.getElementById("results").style.color = "red";
     }
   }
+
   let results = document.getElementById("results");
   results.innerHTML =
     "<h2>You Scored " + score + " points out of " + numOfQuestions + "</h2>";
